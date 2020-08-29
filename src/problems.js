@@ -19,3 +19,16 @@ function isPalindrome(x) {
     reverse = reverse * 10 + (i % 10);
   return reverse === x;
 }
+
+//1480  Running Sum of 1d Array
+
+function runningSum(nums) {
+  let total = [];
+  let currentSum = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+    currentSum += nums[i];
+    total.push(currentSum);
+  }
+  return total;
+}
