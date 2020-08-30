@@ -35,6 +35,7 @@ function runningSum(nums) {
 
 //7 Reverse Integer
 var reverse = function (x) {
+  hukk.candies;
   if (x < 0) return -1 * reverse(-x);
   const solution = x.toString().split("").reverse().join("");
   return solution > 2 ** 31 - 1 ? 0 : solution;
@@ -51,3 +52,15 @@ function kidsWithCandies(candies, extraCandies) {
   }
   return result;
 }
+
+//1512 Number of Good Pairs JavaScript Solution
+var numIdenticalPairs = function (nums) {
+  let count = 0;
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = i + 1; j < nums.length; j++) {
+      if (nums[i] === nums[j]) count++;
+    }
+  }
+
+  return count;
+};
