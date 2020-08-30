@@ -76,3 +76,55 @@ var defangIPaddr = function (address) {
 
   return result;
 };
+
+//1365 How Many Numbers Are Smaller Than the Current Number
+
+var smallerNumbersThanCurrent = function (nums) {
+  let result = [];
+  let count = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+    cn = nums[i];
+
+    for (let j = 0; j < nums.length; j++) {
+      let num = nums[j];
+
+      if (cn > num) count++;
+    }
+
+    result.push(count);
+    count = 0;
+  }
+
+  return result;
+};
+
+//1342 Number of Steps to Reduce a Number to Zero
+var numberOfSteps = function (num) {
+  let count = 0;
+  if (num < 0) return 0;
+
+  while (num > 0) {
+    if (num % 2 == 0) {
+      num /= 2;
+    } else {
+      num -= 1;
+    }
+    count++;
+  }
+
+  return count;
+};
+
+//771. Jewels and Stones
+
+var numJewelsInStones = function (J, S) {
+  let count = 0;
+  for (let i = 0; i < J.length; i++) {
+    for (let x = 0; x < S.length; x++) {
+      if (J[i] === S[x]) count++;
+    }
+  }
+
+  return count;
+};
