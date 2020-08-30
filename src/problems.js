@@ -115,3 +115,16 @@ var numberOfSteps = function (num) {
 
   return count;
 };
+
+//771. Jewels and Stones
+
+var numJewelsInStones = function (J, S) {
+  let count = 0;
+  for (let i = 0; i < J.length; i++) {
+    for (let x = 0; x < S.length; x++) {
+      if (J[i] === S[x]) count++;
+    }
+  }
+
+  return count;
+};
