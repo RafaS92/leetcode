@@ -64,3 +64,15 @@ var numIdenticalPairs = function (nums) {
 
   return count;
 };
+
+//1108 Defanging an IP Address JavaScript Solution
+var defangIPaddr = function (address) {
+  let result = "";
+
+  for (let i = 0; i < address.length; i++) {
+    let char = address[i];
+    char === "." ? (result += "[.]") : (result += char);
+  }
+
+  return result;
+};
