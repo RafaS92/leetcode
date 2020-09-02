@@ -140,3 +140,18 @@ var restoreString = function (s, indices) {
 
   return result.join("");
 };
+
+//
+var findNumbers = function (nums) {
+  let count = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+    let n = String(nums[i]);
+
+    if (n.length % 2 == 0) {
+      count++;
+    }
+  }
+
+  return count;
+};
