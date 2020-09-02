@@ -141,7 +141,7 @@ var restoreString = function (s, indices) {
   return result.join("");
 };
 
-//
+//1295
 var findNumbers = function (nums) {
   let count = 0;
 
@@ -154,4 +154,18 @@ var findNumbers = function (nums) {
   }
 
   return count;
+};
+
+//
+
+var subtractProductAndSum = function (n) {
+  let prod = 1;
+  let sum = 0;
+  let nums = String(n).split("");
+  for (let i = 0; i < nums.length; i++) {
+    let x = Number(nums[i]);
+    prod *= x;
+    sum += x;
+  }
+  return prod - sum;
 };
