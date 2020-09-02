@@ -128,3 +128,44 @@ var numJewelsInStones = function (J, S) {
 
   return count;
 };
+
+//1528
+
+var restoreString = function (s, indices) {
+  let result = [];
+
+  for (let i = 0; i < s.length; i++) {
+    result[indices[i]] = s[i];
+  }
+
+  return result.join("");
+};
+
+//1295
+var findNumbers = function (nums) {
+  let count = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+    let n = String(nums[i]);
+
+    if (n.length % 2 == 0) {
+      count++;
+    }
+  }
+
+  return count;
+};
+
+//
+
+var subtractProductAndSum = function (n) {
+  let prod = 1;
+  let sum = 0;
+  let nums = String(n).split("");
+  for (let i = 0; i < nums.length; i++) {
+    let x = Number(nums[i]);
+    prod *= x;
+    sum += x;
+  }
+  return prod - sum;
+};
