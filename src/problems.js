@@ -194,3 +194,17 @@ var maximum69Number = function (num) {
 
   return Number(ns.join(""));
 };
+
+//1351
+
+var countNegatives = function (grid) {
+  let counter = 0;
+  grid.forEach((arr) => {
+    arr.forEach((num) => {
+      if (num < 0) {
+        counter++;
+      }
+    });
+  });
+  return counter;
+};
