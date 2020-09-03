@@ -169,3 +169,13 @@ var subtractProductAndSum = function (n) {
   }
   return prod - sum;
 };
+
+//709 To lower case
+
+var toLowerCase = function (str) {
+  return str.toLowerCase();
+};
+
+//595
+
+//SELECT name,population,area FROM World WHERE area >= 3000000 OR population >= 25000000
