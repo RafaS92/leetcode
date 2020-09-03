@@ -169,3 +169,9 @@ var subtractProductAndSum = function (n) {
   }
   return prod - sum;
 };
+
+//709 To lower case
+
+var toLowerCase = function (str) {
+  return str.toLowerCase();
+};
