@@ -179,3 +179,18 @@ var toLowerCase = function (str) {
 //595
 
 //SELECT name,population,area FROM World WHERE area >= 3000000 OR population >= 25000000
+
+//1323. Maximum 69 Number
+var maximum69Number = function (num) {
+  let ns = String(num).split("");
+
+  for (let i = 0; i < ns.length; i++) {
+    let int = Number(ns[i]);
+    if (int !== 9) {
+      ns[i] = 9;
+      break;
+    }
+  }
+
+  return Number(ns.join(""));
+};
