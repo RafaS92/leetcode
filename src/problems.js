@@ -238,3 +238,33 @@ var findLengthOfLCIS = function (nums) {
   }
   return max;
 };
+
+//1431. Kids With the Greatest Number of Candies
+
+var busyStudent = function (startTime, endTime, queryTime) {
+  let result = 0;
+
+  for (let i = 0; i < startTime.length; i++) {
+    if (startTime[i] <= queryTime && endTime[i] >= queryTime) {
+      result++;
+    }
+  }
+  return result;
+};
+
+// 1266 - Minimum Time Visiting All Points JavaScript Solution
+
+var minTimeToVisitAllPoints = function (points) {
+  let count = 0;
+  let i = 0;
+
+  while (i < points.length - 1) {
+    let [x1, y1] = points[i];
+    let [x2, y2] = points[i + 1];
+
+    count += Math.max(Math.abs(x1 - x2), Math.abs(y1 - y2));
+    i++;
+  }
+
+  return count;
+};
