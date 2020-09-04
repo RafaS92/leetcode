@@ -51,3 +51,8 @@ function maxSubarraysSum(arr, num) {
 
   return maxSum;
 }
+
+
+[5,2,3,4,5,6]
+   p1     p2    
+
