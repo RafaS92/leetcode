@@ -268,3 +268,13 @@ var minTimeToVisitAllPoints = function (points) {
 
   return count;
 };
+
+// 1464 Maximum Product of Two Elements in an Array JavaScript Solution
+
+var maxProduct = function (nums) {
+  let sort = nums.sort(function (a, b) {
+    return b - a;
+  });
+
+  return (sort[0] - 1) * (sort[1] - 1);
+};
