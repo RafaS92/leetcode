@@ -220,3 +220,61 @@ var createTargetArray = function (nums, index) {
 
   return target;
 };
+
+//674 Longest Continuous Increasing Subsequence
+
+var findLengthOfLCIS = function (nums) {
+  if (nums.length == 0) return 0;
+  let max = 1;
+  let currentLenght = 1;
+
+  for (let i = 1; i < nums.length; i++) {
+    if (nums[i] > nums[i - 1]) {
+      currentLenght++;
+      max = Math.max(currentLenght, max);
+    } else {
+      currentLenght = 1;
+    }
+  }
+  return max;
+};
+
+//1431. Kids With the Greatest Number of Candies
+
+var busyStudent = function (startTime, endTime, queryTime) {
+  let result = 0;
+
+  for (let i = 0; i < startTime.length; i++) {
+    if (startTime[i] <= queryTime && endTime[i] >= queryTime) {
+      result++;
+    }
+  }
+  return result;
+};
+
+// 1266 - Minimum Time Visiting All Points JavaScript Solution
+
+var minTimeToVisitAllPoints = function (points) {
+  let count = 0;
+  let i = 0;
+
+  while (i < points.length - 1) {
+    let [x1, y1] = points[i];
+    let [x2, y2] = points[i + 1];
+
+    count += Math.max(Math.abs(x1 - x2), Math.abs(y1 - y2));
+    i++;
+  }
+
+  return count;
+};
+
+// 1464 Maximum Product of Two Elements in an Array JavaScript Solution
+
+var maxProduct = function (nums) {
+  let sort = nums.sort(function (a, b) {
+    return b - a;
+  });
+
+  return (sort[0] - 1) * (sort[1] - 1);
+};
