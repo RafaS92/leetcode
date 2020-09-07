@@ -278,3 +278,19 @@ var maxProduct = function (nums) {
 
   return (sort[0] - 1) * (sort[1] - 1);
 };
+
+//1221. Split a String in Balanced Strings
+
+var balancedStringSplit = function (s) {
+  let count = 0;
+  let balance = 0;
+
+  for (let i = 0; i < s.length; i++) {
+    s[i] === "L" ? balance++ : balance--;
+    if (balance == 0) {
+      count++;
+    }
+  }
+
+  return count;
+};
