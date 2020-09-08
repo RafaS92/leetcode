@@ -294,3 +294,19 @@ var balancedStringSplit = function (s) {
 
   return count;
 };
+
+//1304 Find N Unique Integers Sum up to Zero Solution & Explanation
+
+var sumZero = function (n) {
+  let array = [];
+
+  if (n % 2 !== 0) {
+    array.push(0);
+  }
+
+  for (let i = 0; i < Math.floor(n / 2); i++) {
+    array.push(n - i, -n + i);
+  }
+
+  return array;
+};
