@@ -328,3 +328,23 @@ var replaceElements = function (arr) {
 
   return newArray;
 };
+
+//1252. Cells with Odd Values in a Matrix
+var oddCells = function (n, m, indices) {
+  let count = 0;
+  let matrix = Array.from({ length: n }, () =>
+    Array.from({ length: m }, () => 0)
+  );
+
+  for (const [r, c] of indices) {
+    for (let i = 0; i < n; i++) matrix[i][c]++;
+
+    for (let i = 0; i < m; i++) matrix[r][i]++;
+  }
+
+  matrix.forEach((array) => {
+    array.forEach((cv) => (cv % 2 !== 0 ? count++ : null));
+  });
+
+  return count;
+};
