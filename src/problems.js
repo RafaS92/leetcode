@@ -310,3 +310,21 @@ var sumZero = function (n) {
 
   return array;
 };
+
+//1299 Replace Elements with Greatest Element on Right Side Solution & Explanation
+
+var replaceElements = function (arr) {
+  let newArray = [];
+
+  for (let i = 1; i < arr.length; i++) {
+    let max = Math.max(...arr.slice(i));
+
+    if (arr[i] <= max) {
+      newArray.push(max);
+    }
+  }
+
+  newArray.push(-1);
+
+  return newArray;
+};
