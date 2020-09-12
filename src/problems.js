@@ -348,3 +348,24 @@ var oddCells = function (n, m, indices) {
 
   return count;
 };
+
+//1207. Unique Number of Occurrences
+var uniqueOccurrences = function (arr) {
+  let map = {};
+
+  for (let e of arr) {
+    !map[e] ? (map[e] = 1) : map[e]++;
+  }
+
+  let set = new Set();
+
+  for (let value of Object.values(map)) {
+    if (!set.has(value)) {
+      set.add(value);
+    } else {
+      return false;
+    }
+  }
+
+  return true;
+};
