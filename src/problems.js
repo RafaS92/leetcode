@@ -384,3 +384,24 @@ var freqAlphabets = function (s) {
   }
   return result;
 };
+
+//88
+
+var merge = function (nums1, m, nums2, n) {
+  let f = m - 1;
+  let s = n - 1;
+
+  for (let i = m + n - 1; i >= 0; i--) {
+    if (s < 0) {
+      break;
+    }
+
+    if (nums1[f] > nums2[s]) {
+      nums1[i] = nums1[f];
+      f--;
+    } else {
+      nums1[i] = nums2[s];
+      s--;
+    }
+  }
+};
