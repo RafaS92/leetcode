@@ -420,3 +420,11 @@ var lengthOfLastWord = function (s) {
   });
   return maxword.length;
 };
+
+//66 plus one
+
+const plusOne = (digits) => {
+  const newNumber = BigInt(digits.join("")) + 1n;
+  digits = String(newNumber).split("");
+  return digits.map((el) => parseInt(el));
+};
