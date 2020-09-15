@@ -405,3 +405,18 @@ var merge = function (nums1, m, nums2, n) {
     }
   }
 };
+
+//58
+
+var lengthOfLastWord = function (s) {
+  let split = s.split(" ");
+  let max = 0;
+  let maxword = "";
+  split.forEach((w) => {
+    let m = w.split("").length;
+    if (m > max) {
+      maxword = w;
+    }
+  });
+  return maxword.length;
+};
