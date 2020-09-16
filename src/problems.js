@@ -473,3 +473,18 @@ var strStr = function (haystack, needle) {
 
   return -1;
 };
+
+//35
+
+var searchInsert = function (nums, target) {
+  let found = 0;
+  if (nums.includes(target)) {
+    found = nums.indexOf(target);
+  } else {
+    nums.push(target);
+    let sorted = nums.sort((a, b) => a - b);
+    found = sorted.indexOf(target);
+  }
+
+  return found;
+};
