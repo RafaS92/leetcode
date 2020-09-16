@@ -453,3 +453,23 @@ var majorityElement = function (nums) {
   }
   return k;
 };
+
+//28 Implement strStr()
+
+var strStr = function (haystack, needle) {
+  if (needle == "") {
+    return 0;
+  }
+  let arr = haystack.split("");
+
+  for (let i = 0; i < arr.length; i++) {
+    if (needle[0] == arr[i]) {
+      let final = arr.slice(i, needle.length + i);
+      if (final.join("") == needle) {
+        return i;
+      }
+    }
+  }
+
+  return -1;
+};
