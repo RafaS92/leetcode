@@ -428,3 +428,28 @@ const plusOne = (digits) => {
   digits = String(newNumber).split("");
   return digits.map((el) => parseInt(el));
 };
+
+//169
+
+var majorityElement = function (nums) {
+  let obj = {};
+
+  for (let i = 0; i < nums.length; i++) {
+    let currentn = nums[i];
+
+    obj[currentn] = obj[currentn] ? (obj[currentn] += 1) : 1;
+  }
+
+  let values = Object.entries(obj);
+
+  let max = 0;
+  let k = 0;
+
+  for ([key, value] of values) {
+    if (value > max) {
+      max = value;
+      k = key;
+    }
+  }
+  return k;
+};
