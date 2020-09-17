@@ -369,3 +369,122 @@ var uniqueOccurrences = function (arr) {
 
   return true;
 };
+
+//1309
+
+var freqAlphabets = function (s) {
+  let result = "";
+  for (let i = 0; i < s.length; i++) {
+    if (s[i + 2] === "#") {
+      result += String.fromCharCode(96 + Number(s[i] + s[i + 1]));
+      i++;
+    } else if (s[i] !== "#") {
+      result += String.fromCharCode(96 + Number(s[i]));
+    }
+  }
+  return result;
+};
+
+//88
+
+var merge = function (nums1, m, nums2, n) {
+  let f = m - 1;
+  let s = n - 1;
+
+  for (let i = m + n - 1; i >= 0; i--) {
+    if (s < 0) {
+      break;
+    }
+
+    if (nums1[f] > nums2[s]) {
+      nums1[i] = nums1[f];
+      f--;
+    } else {
+      nums1[i] = nums2[s];
+      s--;
+    }
+  }
+};
+
+//58
+
+var lengthOfLastWord = function (s) {
+  let split = s.split(" ");
+  let max = 0;
+  let maxword = "";
+  split.forEach((w) => {
+    let m = w.split("").length;
+    if (m > max) {
+      maxword = w;
+    }
+  });
+  return maxword.length;
+};
+
+//66 plus one
+
+const plusOne = (digits) => {
+  const newNumber = BigInt(digits.join("")) + 1n;
+  digits = String(newNumber).split("");
+  return digits.map((el) => parseInt(el));
+};
+
+//169
+
+var majorityElement = function (nums) {
+  let obj = {};
+
+  for (let i = 0; i < nums.length; i++) {
+    let currentn = nums[i];
+
+    obj[currentn] = obj[currentn] ? (obj[currentn] += 1) : 1;
+  }
+
+  let values = Object.entries(obj);
+
+  let max = 0;
+  let k = 0;
+
+  for ([key, value] of values) {
+    if (value > max) {
+      max = value;
+      k = key;
+    }
+  }
+  return k;
+};
+
+//28 Implement strStr()
+
+var strStr = function (haystack, needle) {
+  if (needle == "") {
+    return 0;
+  }
+  let arr = haystack.split("");
+
+  for (let i = 0; i < arr.length; i++) {
+    if (needle[0] == arr[i]) {
+      let final = arr.slice(i, needle.length + i);
+      if (final.join("") == needle) {
+        return i;
+      }
+    }
+  }
+
+  return -1;
+};
+
+//35
+
+var searchInsert = function (nums, target) {
+  let found = 0;
+  if (nums.includes(target)) {
+    found = nums.indexOf(target);
+  } else {
+    nums.push(target);
+    let sorted = nums.sort((a, b) => a - b);
+    found = sorted.indexOf(target);
+  }
+
+  return found;
+};
