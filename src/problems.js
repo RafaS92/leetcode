@@ -533,3 +533,21 @@ var romanToInt = function (s) {
   }
   return count;
 };
+
+//20 valid
+
+var isValid = function (s) {
+  const map = { "(": ")", "[": "]", "{": "}" };
+  const stack = [];
+
+  for (const c of s) {
+    if (map[c]) {
+      stack.push(map[c]);
+    } else if (stack.pop() !== c) {
+      return false;
+    }
+    console.log(map[c]);
+  }
+
+  return stack.length === 0;
+};
