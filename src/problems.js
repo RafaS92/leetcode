@@ -35,7 +35,6 @@ function runningSum(nums) {
 
 //7 Reverse Integer
 var reverse = function (x) {
-  hukk.candies;
   if (x < 0) return -1 * reverse(-x);
   const solution = x.toString().split("").reverse().join("");
   return solution > 2 ** 31 - 1 ? 0 : solution;
@@ -551,3 +550,25 @@ var isValid = function (s) {
 
   return stack.length === 0;
 };
+
+
+//Two sum 
+var twoSum = function(nums, target) {
+  let previousN={}
+  
+  
+  
+  for(let i = 0 ; i <  nums.length ; i++ ){
+      let currentN = nums[i]
+      let required = target - currentN
+      let index2 = previousN[required]
+      
+      if(index2 != null){
+          return [index2,i]
+      } else{
+          previousN[currentN] = i
+      }
+  }
+     
+ }
+ 
