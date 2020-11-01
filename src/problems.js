@@ -571,4 +571,17 @@ var twoSum = function(nums, target) {
   }
      
  }
+
+ //reverse interger
+
+ var reverse = function(x) { 
+  if(x < 0) return reverse(-x)
+  
+ let string = String(x).split("").reverse("").join("")
+ let newNum = parseInt(string)
+ 
+ return (newNum > 2**31-1 ?  0 : newNum)
+ 
+ 
+};
  
