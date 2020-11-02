@@ -35,7 +35,6 @@ function runningSum(nums) {
 
 //7 Reverse Integer
 var reverse = function (x) {
-  hukk.candies;
   if (x < 0) return -1 * reverse(-x);
   const solution = x.toString().split("").reverse().join("");
   return solution > 2 ** 31 - 1 ? 0 : solution;
@@ -551,3 +550,81 @@ var isValid = function (s) {
 
   return stack.length === 0;
 };
+
+
+//Two sum 
+var twoSum = function(nums, target) {
+  let previousN={}
+  
+  
+  
+  for(let i = 0 ; i <  nums.length ; i++ ){
+      let currentN = nums[i]
+      let required = target - currentN
+      let index2 = previousN[required]
+      
+      if(index2 != null){
+          return [index2,i]
+      } else{
+          previousN[currentN] = i
+      }
+  }
+     
+ }
+
+ //reverse interger
+
+ var reverse = function(x) { 
+  if(x < 0) return reverse(-x)
+  
+ let string = String(x).split("").reverse("").join("")
+ let newNum = parseInt(string)
+ 
+ return (newNum > 2**31-1 ?  0 : newNum)
+ 
+ 
+};
+
+//palindrome number 
+
+var isPalindrome = function(x) {
+  if( x < 0) return false
+     
+  return x === reversed(x)
+     
+ };
+ 
+ 
+ function reversed(x){
+     let result = 0
+     
+     while(x > 0){
+        result = (result * 10) + (x % 10)
+         x = Math.floor(x/10)
+     }
+     
+     return result
+     
+ }
+
+ //longets prefix 
+
+ var longestCommonPrefix = function(strs) {
+  let prefix = ""
+  if(strs === 0) return prefix
+  
+  for(let i = 0 ;  i < strs[0].length ; i++){
+      const char = strs[0][i]
+      
+       for(let j = 1; j < strs.length; j++ ){
+          
+          if( char !== strs[j][i] )return prefix
+      }
+      prefix = prefix + char
+      
+  }
+  return prefix
+  
+
+};
+ 
