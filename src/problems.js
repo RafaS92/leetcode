@@ -677,4 +677,7 @@ var numIdenticalPairs = function(nums) {
   return result
   
 };
+
+
+function second()
  
