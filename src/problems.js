@@ -708,4 +708,23 @@ var isValid = function(s) {
   
  
 };
+
+//28 
+
+var strStr = function(haystack, needle) {
+  if(needle == 0) return 0
+  
+  let arr = haystack.split("")
+
+  for(let i = 0 ; i < haystack.length ; i++){
+      if(haystack[i] == needle[0]){
+          if(haystack[i + 1]){
+              let section = arr.splice(i, needle.length)
+              if(section.join("") == needle) return i
+          }
+      }
+  }
+  
+  return -1
+}
  
