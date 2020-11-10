@@ -708,4 +708,40 @@ var isValid = function(s) {
   
  
 };
+
+//28 
+
+var strStr = function(haystack, needle) {
+  if(needle == 0) return 0
+  
+  let arr = haystack.split("")
+
+  for(let i = 0 ; i < haystack.length ; i++){
+      if(haystack[i] == needle[0]){
+          if(haystack[i + 1]){
+              let section = arr.splice(i, needle.length)
+              if(section.join("") == needle) return i
+          }
+      }
+  }
+  
+  return -1
+}
+
+//validate subsequence 
+
+var isSubsequence = function(s, t) {
+  let p1 = 0
+  
+  for(let value of t){
+      if(p1 === t.length) break
+      if(s[p1] == value) p1++
+      
+   
+      
+  }
+  
+  return(p1 == s.length)
+  
+};
  
