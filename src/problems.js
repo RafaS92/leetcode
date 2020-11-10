@@ -727,4 +727,21 @@ var strStr = function(haystack, needle) {
   
   return -1
 }
+
+//validate subsequence 
+
+var isSubsequence = function(s, t) {
+  let p1 = 0
+  
+  for(let value of t){
+      if(p1 === t.length) break
+      if(s[p1] == value) p1++
+      
+   
+      
+  }
+  
+  return(p1 == s.length)
+  
+};
  
